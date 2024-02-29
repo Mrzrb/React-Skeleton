@@ -14,7 +14,7 @@ client.interceptors.request.use(config => {
 });
 
 client.interceptors.response.use(res => {
-    return res.data;
+    return res;
 }, err => {
     if (err && err.response) {
         switch (err.response.status) {
@@ -31,4 +31,4 @@ client.interceptors.response.use(res => {
     return err;
 });
 
-export { client }
+export default client;
