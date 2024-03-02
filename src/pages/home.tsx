@@ -2,9 +2,11 @@ import { useQuery } from "react-query";
 import { Test } from "../api/test";
 
 const Home = () => {
-    const { isLoading, data } = useQuery("test", Test);
+    const { isLoading, isError, data } = useQuery("test", Test);
     return (
-        <div>home, {isLoading ? "xxxx" : JSON.stringify(data?.data)}</div>
+        <div>
+            <div>home, {isLoading ? "xxxx" : JSON.stringify(data?.data)}</div>
+        </div>
     )
 }
 
